@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasakų Generatorius</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Pasakų Generatorius</h1>
+        
+        <div class="controls">
+            <div class="input-group">
+                <label for="age">Vaiko amžius:</label>
+                <select id="age">
+                    <option value="3-5">3-5 metai</option>
+                    <option value="6-8">6-8 metai</option>
+                    <option value="9-12">9-12 metų</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="theme">Tema:</label>
+                <select id="theme">
+                    <option value="gyvūnai">Gyvūnai</option>
+                    <option value="gamta">Gamta</option>
+                    <option value="draugystė">Draugystė</option>
+                    <option value="nuotykiai">Nuotykiai</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="length">Ilgis:</label>
+                <select id="length">
+                    <option value="2">Trumpa (2 pastraipos)</option>
+                    <option value="4">Vidutinė (4 pastraipos)</option>
+                    <option value="6">Ilga (6 pastraipos)</option>
+                </select>
+            </div>
+
+            <button id="generateBtn">Generuoti pasaką</button>
+        </div>
+
+        <div id="storyContainer" class="hidden">
+            <h2>Jūsų pasaka:</h2>
+            <div id="storyText"></div>
+            
+            <div class="audio-controls">
+                <audio id="storyAudio" controls>
+                    <source type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+
+        <div id="loading" class="hidden">
+            Generuojama pasaka...
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
